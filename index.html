@@ -236,7 +236,7 @@
   .contacts { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
   @media (max-width: 560px) { .contacts { grid-template-columns: 1fr; } }
 
-  .contact-card { background: var(--card); border: 1px solid var(--line); padding: 22px 20px; }
+  .contact-card { background: var(--card); border: 1px solid var(--line); padding: 22px 20px; min-width: 0; }
   .contact-role {
     font-family: 'IBM Plex Mono', ui-monospace, monospace;
     font-size: 0.7rem;
@@ -256,7 +256,13 @@
     text-decoration: none;
   }
   .contact-detail svg { flex-shrink: 0; margin-top: 2px; color: var(--accent); }
+  .contact-detail span { min-width: 0; overflow-wrap: anywhere; word-break: break-word; }
   a.contact-detail:hover { color: var(--ink); }
+
+  @media (max-width: 480px) {
+    section.block { padding: 28px 20px; }
+    .contact-card { padding: 18px 16px; }
+  }
 
   /* ---------- Footer ---------- */
   .footer {
